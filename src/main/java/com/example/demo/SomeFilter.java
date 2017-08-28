@@ -25,7 +25,7 @@ public class SomeFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) arg0;
 		HttpServletResponse response = (HttpServletResponse) arg1;
-		System.out.println(String.format("URL: %s", request.getRequestURL()));
+		System.out.println(String.format("URL: %s, remote addr: %s", request.getRequestURL(), request.getRemoteAddr()));
 
 		Collections.list(request.getHeaderNames()).stream().forEach(s -> {
 			System.out.println(String.format("  Header %s : %s", s, request.getHeader(s)));
